@@ -34,21 +34,21 @@ export default function FeaturesSection() {
       description: "Ask about directions — EventBot guides you instantly.",
       icon: <MapPin className="w-7 h-7" />,
     },
-    {
-      title: "Personalized Recommendations",
-      description: "Get session suggestions based on your skills and background.",
-      icon: <Target className="w-7 h-7" />,
-    },
+    // {
+    //   title: "Personalized Recommendations",
+    //   description: "Get session suggestions based on your skills and background.",
+    //   icon: <Target className="w-7 h-7" />,
+    // },
     {
       title: "Stay on Track",
       description: "Never miss a beat — updates on breaks, lunch, and more.",
       icon: <Clock4 className="w-7 h-7" />,
     },
-    {
-      title: "AI-Powered Experience",
-      description: "Conversational, smart, and always ready to help.",
-      icon: <Sparkles className="w-7 h-7" />,
-    },
+    // {
+    //   title: "AI-Powered Experience",
+    //   description: "Conversational, smart, and always ready to help.",
+    //   icon: <Sparkles className="w-7 h-7" />,
+    // },
     {
       title: "Need Anything Else?",
       description: "Just ask! EventBot is always ready to assist you.",

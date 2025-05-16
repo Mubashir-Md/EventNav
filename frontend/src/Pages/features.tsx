@@ -6,7 +6,7 @@ import {
 
 export default function Features() {
   return (
-    <div className="h-full">
+    <div className="h-full" id="features">
       <h2 className="text-3xl md:text-4xl font-[Playfair] text-white mb-4 mt-10 my-10 flex items-center justify-center gap-2">
         <Sparkles className="text-teal-400" /> What Can eventAlly Do?
       </h2>

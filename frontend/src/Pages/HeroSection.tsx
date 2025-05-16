@@ -39,7 +39,7 @@ const HeroSection = () => {
         <span className="text-3xl font-raleway text-[#D1D5DB] italic  ml-140">
           Seamless Experiences
         </span>
-        <span className="font-playfair text-[#edd1f3e1] text-3xl text-center mt-4 ml-30">
+        <span className="font-playfair text-[#baa4bceb] text-3xl text-center mt-4 ml-30">
           powered by{" "}
           <span className="text-8xl font-raleway font-extrabold italic">
             <Cover>

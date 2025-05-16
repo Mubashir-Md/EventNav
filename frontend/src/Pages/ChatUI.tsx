@@ -3,6 +3,7 @@ import { SendHorizonal } from "lucide-react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
 type Message = {
   sender: "user" | "ai";
@@ -18,22 +19,20 @@ const ChatUI = () => {
       isTyping: false,
     },
   ]);
-  const [userInfo, setUserInfo] = useState({email: '', name: ''})
-  const location = useLocation()
+  const [userInfo, setUserInfo] = useState({ email: "", name: "" });
+  const location = useLocation();
 
   useEffect(() => {
     // Extract query params from the URL
     const queryParams = new URLSearchParams(location.search);
-    const email = queryParams.get('email');
-    const name = queryParams.get('name');
+    const email = queryParams.get("email");
+    const name = queryParams.get("name");
 
     if (email && name) {
       // Set user information in state
       setUserInfo({ email, name });
     }
   }, [location]);
-  
-  
 
   const [input, setInput] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
@@ -60,7 +59,6 @@ const ChatUI = () => {
         user: currentUser,
       });
       console.log(res.data);
-      
 
       const botResponse = res.data.message;
 
@@ -111,10 +109,22 @@ const ChatUI = () => {
   }, [messages, displayText]);
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-950 to-gray-900 text-white flex flex-col items-center justify-center p-4">
-      <p className="my-3 text-3xl ">Hey <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">{userInfo.name}
-          {/* <TypewriterEffect className="" words={[{text: userInfo.name, className: 'bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text'}]} /> */}
-      </span> 👋</p>
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-950 to-gray-900 text-white flex flex-col items-center justify-center px-4">
+      <div className="flex justify-center items-center pb-4">
+        <p className="font-raleway  mx-3 text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center">
+          Hey
+          </p>
+          <TypewriterEffect
+            className="font-raleway"
+            words={[
+              {
+                text: userInfo?.name || "Fren",
+                className:
+                  "bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text",
+              },
+            ]}
+          />
+      </div>
       <div className="w-full max-w-2xl h-[80vh] bg-gray-800/30 backdrop-blur-md rounded-2xl border border-gray-700 shadow-xl flex flex-col overflow-hidden">
         {/* Chat Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">

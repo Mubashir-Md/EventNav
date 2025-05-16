@@ -11,24 +11,15 @@ type Attendee = {
 
 export default function Network() {
   const [attendees, setAttendees] = useState<Attendee[]>([]);
-  const [hasUploaded, setHasUploaded] = useState<boolean | null>(null);
+  const [hasUploaded, setHasUploaded] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const checkResumeStatus = async () => {
+    const checkResumeStatus = () => {
       const currentUser = localStorage.getItem("current_user");
-      if (!currentUser) {
-        setHasUploaded(false);
-        return;
-      }
-
-      try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/check_resume/${currentUser}`
-        );
-        setHasUploaded(res.data.uploaded);
-      } catch (error) {
-        console.error("Error checking resume status", error);
+      if (currentUser) {
+        setHasUploaded(true);
+      } else {
         setHasUploaded(false);
       }
     };
