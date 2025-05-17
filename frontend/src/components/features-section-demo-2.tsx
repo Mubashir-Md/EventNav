@@ -3,11 +3,9 @@ import { cn } from "../lib/utils";
 import {
   CalendarClock,
   Users,
-  Target,
   MapPin,
   Clock4,
   MessageSquare,
-  Sparkles,
   InfoIcon,
 } from "lucide-react";
 
