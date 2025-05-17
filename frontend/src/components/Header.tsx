@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom"
-import { Navbar, NavbarLogo, NavBody, NavItems } from "./ui/resizable-navbar"
+import { Navbar, NavBody, NavItems } from "./ui/resizable-navbar"
 import { ChartAreaIcon, Contact, HomeIcon, Network } from "lucide-react"
-import logo from "../assets/logo.png" // corrected import
 
 const Header = () => {
   const location = useLocation()
